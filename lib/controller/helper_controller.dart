@@ -68,6 +68,11 @@ class HelperController extends GetxController {
     contactDbList.value = data.map((e) => ContactModel.fromMap(e)).toList();
   }
 
+  Future<void> abc({required String search}) async {
+    List data = await DbHelper.dbHelper.filterSearch(search);
+    contactDbList.value = data.map((e) => ContactModel.fromMap(e)).toList();
+  }
+
   /// todo ui code logic
   void radio({required var value}) {
     radioValue = value;

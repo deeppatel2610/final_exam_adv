@@ -3,6 +3,7 @@ import 'package:final_exam_adv/model/contact%20_model.dart';
 import 'package:final_exam_adv/srceens/all_contact.dart';
 import 'package:final_exam_adv/srceens/family.dart';
 import 'package:final_exam_adv/srceens/friends.dart';
+import 'package:final_exam_adv/srceens/page4.dart';
 import 'package:final_exam_adv/srceens/work.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -70,6 +71,14 @@ class HomePage extends StatelessWidget {
               },
             ),
           ],
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => Page4()));
+            },
+            icon: Icon(Icons.search),
+          ),
           backgroundColor: Colors.blue,
           title: Text(
             "Contact App",

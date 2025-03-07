@@ -66,4 +66,10 @@ class DbHelper {
     final db = await database;
     return await db!.query(dbName);
   }
+
+  Future<List<Map<String, Object?>>> filterSearch(String search) async {
+    Database? db = await database;
+    String query = "SELECT * FROM $dbName WHERE name LIKE '$search%'";
+    return await db!.rawQuery(query);
+  }
 }
